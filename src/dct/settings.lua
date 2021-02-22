@@ -138,7 +138,15 @@ local function settings(missioncfg)
 					["CAS"]    = enum.missionType.CAS,
 					["ARMEDRECON"] = enum.missionType.ARMEDRECON,
 				},
-				["FA-18C_Hornet"] = {
+				["F-14B"] = {
+					["OCA"]    = enum.missionType.OCA,
+					["BAI"]    = enum.missionType.BAI,
+					["CAP"]    = enum.missionType.CAP,
+					["STRIKE"] = enum.missionType.STRIKE,
+					["SEAD"]   = enum.missionType.SEAD,
+					["CAS"]    = enum.missionType.CAS,
+				},
+				["FA-18C_hornet"] = {
 					["OCA"]    = enum.missionType.OCA,
 					["BAI"]    = enum.missionType.BAI,
 					["CAP"]    = enum.missionType.CAP,
