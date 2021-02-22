@@ -304,8 +304,8 @@ local function getkeys(objtype)
 			["name"]  = "location",
 			["type"]  = "table",})
 		table.insert(keys, {
-			["name"]  = "volume",
-			["type"]  = "table", })
+			["name"]  = "radius",
+			["type"]  = "number", })
 	end
 
 	if objtype == enum.assetType.AIRBASE then

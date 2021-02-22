@@ -14,7 +14,7 @@ function Airspace:__init(template, region)
 	AssetBase.__init(self, template, region)
 	self:_addMarshalNames({
 		"_location",
-		"_volume",
+		"_radius",
 	})
 end
 
@@ -22,10 +22,10 @@ function Airspace:_completeinit(template, region)
 	AssetBase._completeinit(self, template, region)
 	assert(template.location ~= nil,
 		"runtime error: Airspace requires template to define a location")
-	self._location = vector.Vector3D(template.location):raw()
-	assert(template.volume ~= nil,
-		"runtime error: Airspace requires template to define a volume")
-	self._volume = template.volume
+	self._location = vector.Vector2D(template.location):raw()
+	assert(template.radius ~= nil,
+		"runtime error: Airspace requires template to define a radius")
+	self._radius = template.radius
 end
 
 -- TODO: need to figure out how to track influence within this space

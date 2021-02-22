@@ -54,9 +54,9 @@ local function loadMetadata(self, regiondefpath)
 			["check"] = processlimits,
 		},
 		[4] = {
-			["name"] = "airspace",
-			["type"] = "boolean",
-			["default"] = true,
+			["name"] = "altitude_floor",
+			["type"] = "number",
+			["default"] = 914.4,
 		},
 	}
 
@@ -281,31 +281,6 @@ function Region:generate(assetmgr)
 			self:_generate(assetmgr, objtype, names, centroid)
 		end
 	end
-
-	-- do not create an airspace object if not wanted
-	if self.airspace ~= true then
-		return
-	end
-
-	-- create airspace asset based on the centroid of this region
-	if centroid.point == nil then
-		centroid.point = { ["x"] = 0, ["y"] = 0, ["z"] = 0, }
-	end
-	self.location = centroid.point
-	local airspacetpl = Template({
-		["objtype"]    = "airspace",
-		["name"]       = "airspace",
-		["regionname"] = self.name,
-		["desc"]       = "airspace",
-		["coalition"]  = coalition.side.NEUTRAL,
-		["location"]   = self.location,
-		["volume"]     = {
-			["point"]  = self.location,
-			["radius"] = 55560,  -- 30NM
-		},
-	})
-	self:addTemplate(airspacetpl)
-	addAndSpawnAsset(self, airspacetpl.name, assetmgr)
 end
 
 return Region
