@@ -22,7 +22,7 @@ function Airspace:_completeinit(template, region)
 	AssetBase._completeinit(self, template, region)
 	assert(template.location ~= nil,
 		"runtime error: Airspace requires template to define a location")
-	self._location = vector.Vector3D(template.location):raw()
+	self._location = vector.Vector2D(template.location):raw()
 	assert(template.radius ~= nil,
 		"runtime error: Airspace requires template to define a radius")
 	self._radius = template.radius

@@ -81,6 +81,28 @@ enum.missionType = {
 	["ARMEDRECON"] = 7,
 }
 
+
+enum.initializableAssets = {
+	[enum.assetType.AMMODUMP]    = true,
+	[enum.assetType.FUELDUMP]    = true,
+	[enum.assetType.C2]          = true,
+	[enum.assetType.EWR]         = true,
+	[enum.assetType.MISSILE]     = true,
+	[enum.assetType.OCA]         = true,
+	[enum.assetType.PORT]        = true,
+	[enum.assetType.SAM]         = true,
+	[enum.assetType.FACILITY]    = true,
+	[enum.assetType.BUNKER]      = true,
+	[enum.assetType.CHECKPOINT]  = true,
+	[enum.assetType.FACTORY]     = true,
+	[enum.assetType.SHORAD]      = true,
+	[enum.assetType.AIRBASE]     = true,
+	[enum.assetType.SPECIALFORCES] = true,
+	[enum.assetType.FOB]           = true,
+	[enum.assetType.AIRSPACE]      = true,
+}
+
+
 enum.assetClass = {
 	["STRATEGIC"] = {
 		[enum.assetType.AMMODUMP]    = true,
@@ -99,8 +121,9 @@ enum.assetClass = {
 		[enum.assetType.AIRBASE]     = true,
 		[enum.assetType.SPECIALFORCES] = true,
 		[enum.assetType.FOB]           = true,
+		[enum.assetType.AIRSPACE]      = true,
 	},
-	-- agents never get seralized to the state file
+	-- agents never get serialized to the state file
 	["AGENTS"] = {
 		[enum.assetType.PLAYERGROUP] = true,
 	}

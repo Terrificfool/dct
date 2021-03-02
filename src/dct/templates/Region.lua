@@ -292,7 +292,7 @@ end
 function Region:generate(assetmgr)
 	local tpltypes = utils.deepcopy(self._tpltypes)
 
-	for objtype, _ in pairs(dctenums.assetClass["STRATEGIC"]) do
+	for objtype, _ in pairs(dctenums.initializableAssets) do
 		local names = tpltypes[objtype]
 		if names ~= nil then
 			self:_generate(assetmgr, objtype, names)
